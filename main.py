@@ -37,7 +37,7 @@ class ChatWindow(QMainWindow):
 
         #thread is created so that user question is printed in chatbot first, while
         #waiting for openai response, which may take time
-        thread = threading.Thread(target=self.bot_response, args=user_input)
+        thread = threading.Thread(target=self.bot_response, args=(user_input,))
         thread.start()
 
     def bot_response(self, user_input): #user input as arg
